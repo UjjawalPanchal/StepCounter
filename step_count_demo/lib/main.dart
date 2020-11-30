@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         print('readAll: success');
         final item = results.entries.expand((entry) => [entry.key, ...entry.value]).toList();
-        int steps = 0;
+        double steps = 0;
         item.forEach((element) {
           if (element is FitData) {
             print('MyStep Data -- $item');
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         });
         print('MyFinalSteps -- $steps');
         setState(() {
-          _counter = steps;
+          _counter = steps.round();
         });
       }
     } catch (e) {
